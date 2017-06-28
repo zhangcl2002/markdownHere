@@ -10,31 +10,44 @@
 }
 
 pre, code {
-  font-size: 14px;
+  font-size: 0.85em;
+  font-family: Consolas, Inconsolata, Courier, monospace;
 }
 
-p code, li code {
+code {
+  margin: 0 0.15em;
+  padding: 0 0.3em;
   white-space: pre-wrap;
-  display: inline;
-  background-color: rgba(27,31,35,0.05);
-  padding: 2px 3px 1px 3px;
+  border: 1px solid #EAEAEA;
+  background-color: #F8F8F8;
+  border-radius: 3px;
+  display: inline; /* added to fix Yahoo block display of inline code */
 }
 
 pre {
-  font-size: 15px;
-  line-height: 1.4em;
-  padding: 0px;
-  display: block !important;
+  font-size: 1em;
+  line-height: 1.2em;
 }
 
 pre code {
   white-space: pre;
-  overflow: auto;
-  padding: 1px 1px;
-  display: block !important;
-  background-color: rgb(35, 36, 31);
-  border-radius: 0px;
-  color: rgb(248, 248, 242);
+  overflow: auto; /* fixes issue #70: Firefox/Thunderbird: Code blocks with horizontal scroll would have bad background colour */
+  border-radius: 3px;
+  border: 1px solid #CCC;
+  padding: 0.5em 0.7em;
+  display: block !important; /* added to counteract the Yahoo-specific `code` rule; without this, code blocks in Blogger are broken */
+}
+
+/* In edit mode, Wordpress uses a `* { font: ...;} rule+style that makes highlighted
+code look non-monospace. This rule will override it. */
+.markdown-here-wrapper[data-md-url*="wordpress."] code span {
+  font: inherit;
+}
+
+/* Wordpress adds a grey background to `pre` elements that doesn't go well with
+our syntax highlighting. */
+.markdown-here-wrapper[data-md-url*="wordpress."] pre {
+  background-color: transparent;
 }
 
 strong, b{
