@@ -5,6 +5,3 @@
 * 把`base.css`粘贴到 markdown here 的基本渲染CSS处
 * 把`highlight.css`粘贴到 markdown here 的语法高亮CSS处即可。
 
-### 效果
-
-请关注微信号：【[ifree008](http://mp.weixin.qq.com/s/QDb-dAAH6C7DaywCO4pcwA)】，在历史消息中查看。
